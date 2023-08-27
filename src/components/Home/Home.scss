@@ -1,0 +1,22 @@
+@use "../../styles/_colors.scss" as *;
+.search {
+  &__bar {
+    // border: none;
+    // como se one sin borde?
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 0.3125rem;
+    width: 85%;
+  }
+
+  &__input {
+    background-color: red;
+    border: none;
+    margin-left: 0.3125rem;
+
+    &::placeholder {
+      // color: red;
+    }
+  }
+}

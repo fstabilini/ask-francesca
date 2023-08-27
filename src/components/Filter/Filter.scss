@@ -1,0 +1,41 @@
+@use "../../styles/_colors.scss" as *;
+
+.filter {
+  background-color: $primary-violet;
+  width: 100%;
+  padding: 1rem;
+
+  &__title {
+    color: $primary-white;
+    text-align: left;
+    font-size: 1.5rem;
+    border-bottom: 1px solid $primary-white;
+    padding-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: $primary-white;
+    text-align: left;
+    padding-left: 10px;
+    font-size: 1rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__label {
+    color: $primary-white;
+    cursor: pointer;
+  }
+}
+
+// cambiar el color de fondo del checkbox que hoy cuando lo clickeas es azul
