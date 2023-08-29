@@ -4,6 +4,7 @@
   background-color: $primary-violet;
   width: 100%;
   padding: 1rem;
+  width: 20%;
 
   &__title {
     color: $primary-white;
@@ -12,6 +13,9 @@
     border-bottom: 1px solid $primary-white;
     padding-bottom: 0.5rem;
   }
+
+  // me falta agregar la tipografia y la secundaria
+  // deberia tener un global?
 
   &__subtitle {
     color: $primary-white;
@@ -37,5 +41,3 @@
     cursor: pointer;
   }
 }
-
-// cambiar el color de fondo del checkbox que hoy cuando lo clickeas es azul

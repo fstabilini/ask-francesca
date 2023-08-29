@@ -21,8 +21,9 @@
       cursor: pointer;
       color: $primary-white;
 
+      // Deberia tener bsckground en todo su contenedor
       &:hover {
-        color: $secondary-blue;
+        background-color: $secondary-blue;
       }
     }
   }

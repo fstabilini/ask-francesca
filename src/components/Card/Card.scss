@@ -1,0 +1,28 @@
+@use "../../styles/_colors.scss" as *;
+
+.card {
+  width: 330px;
+  height: 165px;
+  overflow: hidden;
+  border: 1px solid $primary-grey;
+  border-radius: 4px;
+  display: flex;
+
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  h2 {
+    font-size: 14px;
+    text-align: left;
+    margin-left: 15px;
+  }
+}
