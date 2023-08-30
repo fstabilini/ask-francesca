@@ -28,3 +28,7 @@ export default function Card({ image, title }) {
     </div>
   );
 }
+
+// la lup la tengo en home y hay que ponerla en la pagina de buscar recetas
+
+// fire base

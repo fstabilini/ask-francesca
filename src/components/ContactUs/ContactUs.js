@@ -84,7 +84,7 @@ const ContactUs = () => {
           onChange={handleInputChange}
           className={formData.subject ? "active" : ""}
         /> */}
-        <button type="submit" className="contact-us__btn">
+        <button type="submit" className="contact-us__button">
           Send
         </button>
       </form>

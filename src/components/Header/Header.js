@@ -10,8 +10,8 @@ const Header = () => {
       </div>
       <nav className="header__nav">
         <div className="header__nav-link">Home</div>
-        <div className="header__nav-link">Create</div>
-        <div className="header__nav-link">Recipe</div>
+        <div className="header__nav-link">New Recipe</div>
+        <div className="header__nav-link">Favorites</div>
         <div className="header__nav-link">Contact Us</div>
       </nav>
     </header>
@@ -19,3 +19,8 @@ const Header = () => {
 };
 
 export default Header;
+
+// tengo que hacer un readme y the developer installation instructions
+// cambiar la letra y poner una de backup
+// poner un global?
+// hacer mixins

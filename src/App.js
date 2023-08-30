@@ -1,9 +1,10 @@
 import "./App.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "./components/Card/Card";
+// import Card from "./components/Card/Card";
 // import RecipeForm from "./components/RecipeForm/RecipeForm";
-// import ContactUs from "./components/ContactUs/ContactUs";
+import ContactUs from "./components/ContactUs/ContactUs";
+
 // import Home from "./components/Home/Home";
 import Header from "./components/Header/Header";
 import AllRecipes from "./pages/AllRecipes/AllRecipes";
@@ -33,18 +34,16 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <ContactUs /> */}
+      <ContactUs />
       {/* <Home /> */}
-      <AllRecipes
+      {/* <AllRecipes
         categories={categories}
         setSelectedCategory={setSelectedCategory}
         selectedCategory={selectedCategory}
-      />
+      /> */}
       {/* <RecipeForm /> */}
     </div>
   );
 }
 
 export default App;
-
-// sign with google?

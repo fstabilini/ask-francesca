@@ -1,7 +1,8 @@
 @use "../../styles/_colors.scss" as *;
+@use "../../styles/_mixins.scss" as *;
 
 .contact-us {
-  background-color: $background-light-grey;
+  // background-color: $background-light-grey;
   padding: 20px;
   border-radius: 8px;
   width: 300px;
@@ -15,8 +16,8 @@
   input,
   textarea {
     padding: 10px;
-    border: 2px solid $background-light-grey;
-    border-radius: 5px;
+    border: 1px solid $primary-grey;
+    border-radius: 4px;
     transition: border 0.3s;
     resize: none;
 
@@ -39,20 +40,20 @@
     font-size: 12px;
   }
 
-  &__btn {
-    padding: 10px 20px;
-    background-color: $primary-blue;
-    border: none;
-    border-radius: 5px;
-    color: $primary-white;
-    cursor: pointer;
-    transition: background-color 0.3s;
+  &__button {
+    @include button;
+    width: 50%;
 
     &:hover {
       background-color: $secondary-blue;
     }
   }
 }
+
+// que el borde de los imputs sean iguales a el de las cards
+// que el tamaño del boton sea igual al de crear una nueva receta
+
+// tengo que cambiar la tipografia de subject en el placeholder
 
 // Tablet
 @media (min-width: 768px) {

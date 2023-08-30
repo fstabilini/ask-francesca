@@ -3,8 +3,10 @@
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 1.25rem;
+  align-items: center;
+  height: 3.125rem;
   background-color: $primary-blue;
+  padding: 0 20px;
 
   &__logo {
     &-img {
@@ -13,46 +15,49 @@
 
   &__nav {
     display: flex;
-    gap: 0.625rem;
+    height: 100%;
 
     &-link {
-      font-size: 1rem;
       text-align: center;
-      cursor: pointer;
       color: $primary-white;
+      cursor: pointer;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 1.3rem;
 
-      // Deberia tener bsckground en todo su contenedor
       &:hover {
         background-color: $secondary-blue;
       }
     }
   }
-
-  // Tablet
-  @media screen and (min-width: 768px) {
-    &__nav {
-      gap: 0.9375rem;
-    }
-
-    &__nav-btn {
-      padding: 0.625rem 1.5625rem;
-    }
-  }
-
-  // Desktop version
-  @media screen and (min-width: 1280px) {
-    padding: 1.5625rem 2.5rem;
-
-    &__logo-img {
-      max-width: 12.5rem;
-    }
-
-    &__nav {
-      gap: 1.25rem;
-    }
-
-    &__nav-btn {
-      padding: 0.9375rem 1.875rem;
-    }
-  }
 }
+
+//   // Tablet
+//   @media screen and (min-width: 48rem) {
+//     &__nav {
+//       gap: 15px;
+//     }
+
+//     &__nav-btn {
+//       padding: 10px 25px;
+//     }
+//   }
+
+//   // Desktop version
+//   @media screen and (min-width: 80rem) {
+//     padding: 25px 40px;
+
+//     &__logo-img {
+//       max-width: 200px;
+//     }
+
+//     &__nav {
+//       gap: 20px;
+//     }
+
+//     &__nav-btn {
+//       padding: 15px 30px;
+//     }
+//   }
+// }
