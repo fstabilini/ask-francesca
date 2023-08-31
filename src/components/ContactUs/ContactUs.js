@@ -54,7 +54,9 @@ const ContactUs = () => {
           placeholder="Name"
           value={formData.name}
           onChange={handleInputChange}
-          className={formData.name ? "active" : ""}
+          className={`contact-us__input-name ${
+            formData.name ? "contact-us__input-name--active" : ""
+          }`}
         />
         <input
           type="email"
@@ -62,7 +64,13 @@ const ContactUs = () => {
           placeholder="Email"
           value={formData.email}
           onChange={handleInputChange}
-          className={formData.email ? (errors.email ? "error" : "active") : ""}
+          className={`contact-us__input-email ${
+            formData.email
+              ? errors.email
+                ? "contact-us__input-email--error"
+                : "contact-us__input-email--active"
+              : ""
+          }`}
         />
         {errors.email && (
           <span className="contact-us__error">{errors.email}</span>
@@ -71,20 +79,13 @@ const ContactUs = () => {
           name="subject"
           placeholder="Subject"
           value={formData.subject}
-          onChange={handleInputChange}
-          className={formData.subject ? "active" : ""}
+          className={`contact-us__textarea-subject ${
+            formData.subject ? "contact-us__textarea-subject--active" : ""
+          }`}
           rows="4"
         ></textarea>
 
-        {/* <input
-          type="text"
-          name="subject"
-          placeholder="Subject"
-          value={formData.subject}
-          onChange={handleInputChange}
-          className={formData.subject ? "active" : ""}
-        /> */}
-        <button type="submit" className="contact-us__btn">
+        <button type="submit" className="contact-us__button">
           Send
         </button>
       </form>

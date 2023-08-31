@@ -1,31 +1,23 @@
 import React from "react";
 import "./Filter.scss";
 
-const Filter = () => {
-  const foodOptions = [
-    "Italian Food",
-    "Indian Food",
-    "Latin Food",
-    "Mexican Food",
-    "Asian Food",
-    "Vegetarian Food",
-    "Vegan Food",
-    "Desserts",
-  ];
-
+const Filter = ({ categories, setSelectedCategory }) => {
   return (
     <div className="filter">
       <h1 className="filter__title">Filter</h1>
       <h2 className="filter__subtitle">Type:</h2>
       <form className="filter__form">
-        {foodOptions.map((food, index) => (
+        {categories?.map((food, index) => (
           <div key={index} className="filter__option">
             <input
-              type="checkbox"
+              type="radio"
               id={food}
               name="foodType"
               value={food}
-              className="filter__checkbox-button"
+              className="filter__radio-button"
+              onClick={() => {
+                setSelectedCategory(food);
+              }}
             />
             <label htmlFor={food} className="filter__label">
               {food}
@@ -38,3 +30,5 @@ const Filter = () => {
 };
 
 export default Filter;
+
+// agregar categorias correctas de comidas

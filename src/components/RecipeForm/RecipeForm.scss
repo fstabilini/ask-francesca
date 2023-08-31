@@ -1,0 +1,80 @@
+@use "../../styles/_colors.scss" as *;
+@use "../../styles/_mixins.scss" as *;
+
+.recipe-form {
+  width: 40%;
+  border: 1px solid $primary-grey;
+  border-radius: 4px;
+  margin: 30px auto;
+  padding: 10px 50px;
+  text-align: left;
+
+  &__title {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    padding: 4px;
+    margin: 6px 0;
+    width: 70%;
+    border: 1px solid $primary-grey;
+    border-radius: 4px;
+    transition: border 0.3s;
+  }
+
+  &__double {
+    display: flex;
+    justify-content: left;
+  }
+
+  &__half {
+    width: 41%;
+    text-align: left;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__instructions {
+    //TODO: pasar a una variable probablemente?
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    padding: 4px;
+    margin: 6px;
+    width: 70%;
+    border: 1px solid $primary-grey;
+    border-radius: 4px;
+    transition: border 0.3s;
+    resize: none;
+
+    // min-height: 150px;
+    // margin-top: 1rem;
+    // margin-bottom: 1rem;
+  }
+
+  &__button {
+    @include button;
+    // que el width sea como el boton de contact us
+    width: 30%;
+
+    &:hover {
+      background-color: $secondary-blue;
+    }
+  }
+
+  .add-button {
+    background-color: $primary-blue;
+    color: $primary-white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: $secondary-blue;
+    }
+  }
+}
