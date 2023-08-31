@@ -7,7 +7,7 @@ const Filter = ({ categories, setSelectedCategory }) => {
       <h1 className="filter__title">Filter</h1>
       <h2 className="filter__subtitle">Type:</h2>
       <form className="filter__form">
-        {categories.map((food, index) => (
+        {categories?.map((food, index) => (
           <div key={index} className="filter__option">
             <input
               type="radio"

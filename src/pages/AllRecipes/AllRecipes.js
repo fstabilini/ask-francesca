@@ -2,6 +2,7 @@ import React from "react";
 import Filter from "../../components/Filter/Filter";
 import RecipesByCategory from "../../components/RecipesByCategory/RecipesByCategory";
 import "./AllRecipes.scss";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 export default function AllRecipes({
   categories,
@@ -14,7 +15,10 @@ export default function AllRecipes({
         categories={categories}
         setSelectedCategory={setSelectedCategory}
       />
-      <RecipesByCategory selectedCategory={selectedCategory} />
+      <div>
+        <SearchBar />
+        <RecipesByCategory selectedCategory={selectedCategory} />
+      </div>
     </div>
   );
 }

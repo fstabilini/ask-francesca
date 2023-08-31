@@ -21,6 +21,7 @@ export default function RecipesByCategory({ selectedCategory }) {
             title={recipe.strMeal}
             image={recipe.strMealThumb}
             key={recipe.idMeal}
+            id={recipe.idMeal}
           />
         </div>
       ))}

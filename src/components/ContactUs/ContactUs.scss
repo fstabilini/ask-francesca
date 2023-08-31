@@ -2,7 +2,6 @@
 @use "../../styles/_mixins.scss" as *;
 
 .contact-us {
-  // background-color: $background-light-grey;
   padding: 20px;
   border-radius: 8px;
   width: 300px;
@@ -13,31 +12,34 @@
     gap: 10px;
   }
 
-  input,
-  textarea {
+  &__input-name,
+  &__input-email,
+  &__textarea-subject {
     padding: 10px;
     border: 1px solid $primary-grey;
     border-radius: 4px;
     transition: border 0.3s;
     resize: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+      "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+      "Helvetica Neue", sans-serif;
+    //TODO: pasar a una variable probablemente?
 
-    &.active {
+    &.contact-us__input-name--active,
+    &.contact-us__input-email--active,
+    &.contact-us__textarea-subject--active {
       border-color: $primary-blue;
     }
 
-    &.error {
+    &.contact-us__input-email--error {
       border-color: $supporting-red;
     }
 
     &:focus {
+      // estos dos tienen sentido juntos? porque el primero es para que no tega colorel borde cuando lo clickeo
       outline: none;
       border-color: $primary-blue;
     }
-  }
-
-  &__error {
-    color: $supporting-red;
-    font-size: 12px;
   }
 
   &__button {
@@ -50,43 +52,39 @@
   }
 }
 
-// que el borde de los imputs sean iguales a el de las cards
 // que el tamaño del boton sea igual al de crear una nueva receta
 
-// tengo que cambiar la tipografia de subject en el placeholder
-
 // Tablet
-@media (min-width: 768px) {
-  .contact-us {
-    width: 450px;
+// @media (min-width: 768px) {
+//   .contact-us {
+//     width: 450px;
 
-    &__form {
-      gap: 15px;
-    }
+//     &__form {
+//       gap: 15px;
+//     }
 
-    input,
-    textarea,
-    &__btn {
-      // Agregamos textarea aquí también
-      padding: 12px 20px;
-    }
-  }
-}
+//     input,
+//     textarea,
+//     &__btn {
+//       // Agregamos textarea aquí también
+//       padding: 12px 20px;
+//     }
+//   }
+// }
 
 // Desktop
-@media (min-width: 1280px) {
-  .contact-us {
-    width: 600px;
+// @media (min-width: 1280px) {
+//   .contact-us {
+//     width: 600px;
 
-    &__form {
-      gap: 20px;
-    }
+//     &__form {
+//       gap: 20px;
+//     }
 
-    input,
-    textarea,
-    &__btn {
-      // Y aquí
-      padding: 14px 25px;
-    }
-  }
-}
+//     input,
+//     textarea,
+//     &__btn {
+//       padding: 14px 25px;
+//     }
+//   }
+// }
