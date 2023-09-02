@@ -34,8 +34,6 @@ const ContactUs = () => {
       formData.email &&
       formData.subject
     ) {
-      console.log("Form submitted", formData);
-
       // Restablecer el formulario a valores iniciales
       setFormData({
         name: "",
@@ -79,6 +77,7 @@ const ContactUs = () => {
           name="subject"
           placeholder="Subject"
           value={formData.subject}
+          onChange={handleInputChange}
           className={`contact-us__textarea-subject ${
             formData.subject ? "contact-us__textarea-subject--active" : ""
           }`}
@@ -92,5 +91,8 @@ const ContactUs = () => {
     </div>
   );
 };
+
+// subject is not working, and email is still in blue
+// conectar para se mande el mail
 
 export default ContactUs;

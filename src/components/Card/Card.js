@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Card.scss";
 import { useNavigate } from "react-router-dom";
 
@@ -23,14 +23,6 @@ export default function Card({ image, title, id }) {
       <img src={image} alt={title}></img>
       <div>
         <h2>{truncatedTitle}</h2>
-        <ion-icon
-          style={{ color: "red", fontSize: "15px" }}
-          name="heart"
-        ></ion-icon>
-        <ion-icon
-          style={{ color: "black", fontSize: "15px" }}
-          name="heart-outline"
-        ></ion-icon>
       </div>
     </div>
   );
