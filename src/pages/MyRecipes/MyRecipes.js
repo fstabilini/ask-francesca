@@ -5,6 +5,7 @@ import "./MyRecipes.scss";
 export default function MyRecipes({ myRecipes }) {
   return (
     <div className="myRecipes-wrapper">
+      <div className="column"></div>
       <div className="myRecipes">
         {myRecipes?.map((recipe) => (
           <div>
@@ -17,6 +18,7 @@ export default function MyRecipes({ myRecipes }) {
           </div>
         ))}
       </div>
+      <div className="column"></div>
     </div>
   );
 }
