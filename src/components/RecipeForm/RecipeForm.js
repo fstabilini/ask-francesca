@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./RecipeForm.scss";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 
-const RecipeForm = () => {
+const RecipeForm = ({ setMyRecipes }) => {
   const [data, setData] = useState({
+    idMeal: uuidv4(),
     strMeal: "",
     strCategory: "",
     strIngredients: ["", ""],
@@ -12,8 +14,6 @@ const RecipeForm = () => {
     strMealThumb: "",
     strYoutube: "",
   });
-
-  console.log(data);
 
   const addField = () => {
     setData((prevData) => ({
@@ -36,13 +36,15 @@ const RecipeForm = () => {
     }
   };
 
-  const saveRecipe = async () => {
+  const saveRecipe = async (e) => {
+    e.preventDefault();
     try {
       const postDB = await axios.post("http://localhost:8080/recipes", data);
-      console.log(postDB);
+      setMyRecipes((prevRecipes) => [...prevRecipes, data]);
       alert("Recipe saved successfully!");
 
       const initialState = {
+        idMeal: "",
         strMeal: "",
         strCategory: "",
         strIngredients: ["", ""],
@@ -60,7 +62,9 @@ const RecipeForm = () => {
 
   return (
     <form className="recipe-form" onSubmit={saveRecipe}>
-      <h1 className="recipe-form__title">Create a new recipe:</h1>
+      <h1 className="recipe-form__title">Create a new recipe</h1>
+
+      <label className="recipe-form__label">Recipe name:</label>
       <input
         type="text"
         name="strMeal"
@@ -69,9 +73,20 @@ const RecipeForm = () => {
         placeholder="Recipe name"
         className="recipe-form__input"
       />
+
+      <label className="recipe-form__label">Recipe category:</label>
+      <input
+        type="text"
+        name="strCategory"
+        value={data.strCategory}
+        onChange={inputChange}
+        placeholder="Recipe category"
+        className="recipe-form__input"
+      />
+
       <div className="recipe-form__double">
         <div className="recipe-form__half">
-          <h2>Ingredients:</h2>
+          <label className="recipe-form__label">Ingredients:</label>
           {data.strIngredients.map((ingredient, index) => (
             <input
               key={index}
@@ -85,7 +100,7 @@ const RecipeForm = () => {
           ))}
         </div>
         <div className="recipe-form__half">
-          <h2>Quantity:</h2>
+          <label className="recipe-form__label">Quantity:</label>
           {data.strMeasures.map((measure, index) => (
             <input
               key={index}
@@ -102,7 +117,7 @@ const RecipeForm = () => {
       <button className="add-button" onClick={addField} type="button">
         +
       </button>
-      <h2>Instructions:</h2>
+      <label className="recipe-form__label">Instructions:</label>
       <textarea
         className="recipe-form__instructions"
         name="strInstructions"
@@ -113,12 +128,26 @@ const RecipeForm = () => {
       <div className="recipe-form__double">
         {/* dijo juajua que use label asi no se ve asi feo */}
         <div className="recipe-form__half">
-          <h2>Upload Image</h2>
-          <input type="file" />
+          <label className="recipe-form__label">Upload Image</label>
+          <input
+            type="text"
+            name="strMealThumb"
+            value={data.strMealThumb}
+            onChange={inputChange}
+            placeholder="Image URL"
+            className="recipe-form__input"
+          />
         </div>
         <div className="recipe-form__half">
-          <h2>Upload YouTube video</h2>
-          <input type="file" />
+          <label className="recipe-form__label">Upload YouTube video</label>
+          <input
+            type="text"
+            name="strYoutube"
+            value={data.strYoutube}
+            onChange={inputChange}
+            placeholder="Video URL"
+            className="recipe-form__input"
+          />
         </div>
       </div>
       <button className="recipe-form__button" type="submit">

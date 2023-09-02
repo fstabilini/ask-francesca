@@ -1,3 +1,96 @@
-.image-ingredients {
+@use "../../styles/_colors.scss" as *;
+@use "../../styles/_mixins.scss" as *;
+
+// .image-ingredients {
+//   display: flex;
+// }
+
+.detail {
   display: flex;
+  flex-direction: column;
+  justify-content: center; // Centrar los elementos internos verticalmente
+  min-height: 100vh; // Ocupar al menos toda la altura de la ventana
+  padding: 20px;
+
+  &__return-button {
+    @include button;
+    display: flex;
+    margin: 25px;
+    margin-left: auto;
+
+    &:hover {
+      background-color: $secondary-blue;
+    }
+  }
+
+  &__favorite-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    margin-top: 30px;
+    margin-left: auto;
+  }
+
+  &__title-container {
+    padding: 0 6rem;
+  }
+  //tengo categorias medio largas y raras
+  &__title-container__category {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: $primary-grey;
+  }
+
+  &__image-ingredients {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 30px;
+    padding: 0 20px; // Añadir padding horizontal
+
+    & img {
+      // width: 30%; // Tamaño de la foto
+      height: 400px;
+      margin-right: 20px;
+      margin-top: 0;
+      padding-top: 0;
+    }
+  }
+
+  &__ingredients-list {
+    list-style: none; // Eliminar bullets
+    padding: 15px;
+    margin-top: 0;
+    width: 35%;
+    height: 370px;
+    border: 1px solid $primary-grey; // Marco para encuadrar
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Ligera sombra para dar profundidad
+  }
+
+  &__ingredient {
+    padding: 5px 0;
+    font-size: 1rem;
+  }
+
+  &__sub-title {
+    font-size: 1.5rem;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  &__instructions {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding: 30px;
+  }
+
+  &__video {
+    margin-top: 30px;
+
+    iframe {
+      max-width: 100%; // Asegurar que el video no exceda el ancho de su contenedor
+    }
+  }
 }

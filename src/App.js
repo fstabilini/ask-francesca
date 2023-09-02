@@ -1,21 +1,18 @@
 import "./App.scss";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Card from "./components/Card/Card";
-import RecipeForm from "./components/RecipeForm/RecipeForm";
-import ContactUs from "./components/ContactUs/ContactUs";
 import Header from "./components/Header/Header";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AllRecipes from "./pages/AllRecipes/AllRecipes";
 import Contact from "./pages/Contact/Contact";
-import Favorites from "./pages/Favorites/Favorites";
-import Home from "./pages/Favorites/Favorites";
+import Home from "./pages/Home/Home";
 import NewRecipe from "./pages/NewRecipe/NewRecipe";
 import RecipeDetail from "./pages/RecipeDetail/RecipeDetail";
+import MyRecipes from "./pages/MyRecipes/MyRecipes";
 
 function App() {
   const [categories, setCategories] = useState([]);
-  const [favorites, setFavorites] = useState([]);
+  const [myRecipes, setMyRecipes] = useState([]);
   const [recipes, setRecipes] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Vegetarian");
 
@@ -26,6 +23,11 @@ function App() {
           "http://localhost:8080/recipes/categories"
         );
         setCategories(categoriesAxios.data);
+
+        const myRecipesAxios = await axios.get(
+          "http://localhost:8080/recipes/favorites"
+        );
+        setMyRecipes(myRecipesAxios.data.myRecipes);
       } catch (error) {
         console.error("Error fetching categories:", error);
       }
@@ -38,6 +40,7 @@ function App() {
       <div className="App">
         <Header />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
             path="/all-recipes"
             element={
@@ -48,14 +51,22 @@ function App() {
               />
             }
           />
-          {/* <Route path="/contact" element={<Contact />} /> */}
-          {/* <Route path="/favorites" element={<Favorites />} /> */}
-          {/* <Route path="/" element={<Home />} /> */}
-          {/* <Route path="/new-recipe" element={<NewRecipe />} /> */}
-          <Route path="/recipe-detail/:id" element={<RecipeDetail />} />
+          <Route
+            path="/new-recipe"
+            element={<NewRecipe setMyRecipes={setMyRecipes} />}
+          />
+          <Route
+            path="/my-recipes"
+            element={<MyRecipes myRecipes={myRecipes} />}
+          />
+          <Route
+            path="/recipe-detail/:id"
+            element={
+              <RecipeDetail setMyRecipes={setMyRecipes} myRecipes={myRecipes} />
+            }
+          />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
-        {/* <ContactUs /> */}
-        {/* <RecipeForm /> */}
       </div>
     </BrowserRouter>
   );
@@ -64,3 +75,4 @@ function App() {
 export default App;
 
 // agregar efectos tipo papel picado y otros que le den movimiento a la pagina
+// cambiar la tipografia y en los 2 textareas tambien
