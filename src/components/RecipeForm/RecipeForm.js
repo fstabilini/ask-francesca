@@ -2,8 +2,12 @@ import React, { useState } from "react";
 import "./RecipeForm.scss";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import Confetti from "react-confetti";
+import Swal from "sweetalert2";
 
 const RecipeForm = ({ setMyRecipes }) => {
+  const [showConfetti, setShowConfetti] = useState(false);
+
   const [data, setData] = useState({
     idMeal: uuidv4(),
     strMeal: "",
@@ -41,7 +45,17 @@ const RecipeForm = ({ setMyRecipes }) => {
     try {
       const postDB = await axios.post("http://localhost:8080/recipes", data);
       setMyRecipes((prevRecipes) => [...prevRecipes, data]);
-      alert("Recipe saved successfully!");
+      setShowConfetti(true);
+      console.log(showConfetti);
+      setTimeout(() => {
+        Swal.fire({
+          icon: "success",
+          title: "Congratulations!",
+          text: "Your recipe has been saved successfully!",
+          timer: 3000,
+          showConfirmButton: false,
+        });
+      }, 3000);
 
       const initialState = {
         idMeal: "",
@@ -54,6 +68,9 @@ const RecipeForm = ({ setMyRecipes }) => {
         strYoutube: "",
       };
       setData(initialState);
+      setTimeout(() => {
+        setShowConfetti(false);
+      }, 4000);
     } catch (err) {
       console.error(err);
       alert("Error saving the recipe. Please try again later.");
@@ -62,8 +79,16 @@ const RecipeForm = ({ setMyRecipes }) => {
 
   return (
     <form className="recipe-form" onSubmit={saveRecipe}>
-      <h1 className="recipe-form__title">Create a new recipe</h1>
-
+      {showConfetti && (
+        <Confetti
+          width={window.innerWidth}
+          height={window.innerHeight}
+          numberOfPieces={0.7 * window.innerWidth}
+          recycle={false}
+          colors={["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]}
+        />
+      )}
+      ;<h1 className="recipe-form__title">Create a new recipe</h1>
       <label className="recipe-form__label">Recipe name:</label>
       <input
         type="text"
@@ -73,7 +98,6 @@ const RecipeForm = ({ setMyRecipes }) => {
         placeholder="Recipe name"
         className="recipe-form__input"
       />
-
       <label className="recipe-form__label">Recipe category:</label>
       <input
         type="text"
@@ -83,7 +107,6 @@ const RecipeForm = ({ setMyRecipes }) => {
         placeholder="Recipe category"
         className="recipe-form__input"
       />
-
       <div className="recipe-form__double">
         <div className="recipe-form__half">
           <label className="recipe-form__label">Ingredients:</label>
