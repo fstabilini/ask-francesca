@@ -12,6 +12,29 @@
   min-height: 100vh; // Ocupar al menos toda la altura de la ventana
   padding: 20px;
 
+  &__column-wrap {
+    display: flex;
+  }
+
+  &__title-container {
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 6rem;
+    flex-direction: column;
+
+    &__title {
+      font-weight: 500;
+    }
+  }
+
+  &__title-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+
   &__return-button {
     @include button;
     display: flex;
@@ -27,8 +50,7 @@
     background-color: transparent;
     border: none;
     display: flex;
-    margin-top: 30px;
-    margin-left: auto;
+    align-items: center;
   }
 
   &__title-container {
@@ -46,7 +68,6 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 30px;
     padding: 0 20px; // Añadir padding horizontal
 
     & img {
@@ -80,15 +101,12 @@
   }
 
   &__instructions {
-    margin-top: 20px;
     font-size: 1.1rem;
     line-height: 1.5;
-    padding: 30px;
+    padding: 0 50px;
   }
 
   &__video {
-    margin-top: 30px;
-
     iframe {
       max-width: 100%; // Asegurar que el video no exceda el ancho de su contenedor
     }

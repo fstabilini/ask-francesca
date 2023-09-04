@@ -1,0 +1,46 @@
+.home {
+  display: flex;
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__content {
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    font-family: Arial, sans-serif; // Puedes cambiar la fuente si tienes otra en mente
+    background-color: #ffffff; // Color de fondo del contenido
+  }
+
+  &__title {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px; // Espaciado debajo del título
+    font-weight: 500;
+  }
+
+  &__description,
+  &__conclusion {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+  }
+
+  &__list {
+    margin-top: 20px;
+    padding: 0; // Removiendo padding por defecto
+    list-style: none; // Sacando los bullets
+    color: #555;
+
+    &-item {
+      margin-bottom: 15px;
+    }
+  }
+}

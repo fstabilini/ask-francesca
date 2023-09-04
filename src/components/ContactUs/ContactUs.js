@@ -4,48 +4,30 @@ import "./ContactUs.scss";
 const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     subject: "",
-  });
-  const [errors, setErrors] = useState({
-    email: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
-
-    if (name === "email") {
-      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-      if (!emailPattern.test(value)) {
-        setErrors({ email: "invalid Email" });
-      } else {
-        setErrors({ email: "" });
-      }
-    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log("handleSubmit is being executed!");
 
-    if (
-      formData.name &&
-      errors.email === "" &&
-      formData.email &&
-      formData.subject
-    ) {
-      // Restablecer el formulario a valores iniciales
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-      });
-    }
+    window.location.href = `mailto:platepal@example.com?subject=Contact from ${formData.name}&body=${formData.subject}`;
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+    });
   };
 
   return (
     <div className="contact-us">
       <form onSubmit={handleSubmit} className="contact-us__form">
+        <h2>Contact us</h2>
         <input
           type="text"
           name="name"
@@ -56,23 +38,6 @@ const ContactUs = () => {
             formData.name ? "contact-us__input-name--active" : ""
           }`}
         />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleInputChange}
-          className={`contact-us__input-email ${
-            formData.email
-              ? errors.email
-                ? "contact-us__input-email--error"
-                : "contact-us__input-email--active"
-              : ""
-          }`}
-        />
-        {errors.email && (
-          <span className="contact-us__error">{errors.email}</span>
-        )}
         <textarea
           name="subject"
           placeholder="Subject"
@@ -85,14 +50,11 @@ const ContactUs = () => {
         ></textarea>
 
         <button type="submit" className="contact-us__button">
-          Send
+          Send Email
         </button>
       </form>
     </div>
   );
 };
-
-// subject is not working, and email is still in blue
-// conectar para se mande el mail
 
 export default ContactUs;

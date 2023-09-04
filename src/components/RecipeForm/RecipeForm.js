@@ -88,7 +88,7 @@ const RecipeForm = ({ setMyRecipes }) => {
           colors={["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]}
         />
       )}
-      ;<h1 className="recipe-form__title">Create a new recipe</h1>
+      <h1 className="recipe-form__title">Create a new recipe</h1>
       <label className="recipe-form__label">Recipe name:</label>
       <input
         type="text"

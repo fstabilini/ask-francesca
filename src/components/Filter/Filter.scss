@@ -1,10 +1,12 @@
 @use "../../styles/_colors.scss" as *;
 
 .filter {
-  background-color: $primary-violet;
+  background-color: $primary-dark-blue;
   width: 100%;
   padding: 1rem;
   width: 20%;
+  min-width: 15vw;
+  min-height: 90vh;
 
   &__title {
     color: $primary-white;

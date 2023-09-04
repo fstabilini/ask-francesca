@@ -1,12 +1,21 @@
 .myRecipes-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
 }
 .myRecipes {
+  &__middle {
+    width: 80%;
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
   padding: 30px;
-  width: 90%;
+  width: 100%;
 }

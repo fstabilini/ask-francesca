@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 3.125rem;
+  height: 10vh;
   background-color: $primary-blue;
   padding: 0 20px;
 
@@ -35,7 +35,8 @@
       padding: 0 1.3rem;
       text-decoration: none;
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $secondary-blue;
       }
 
