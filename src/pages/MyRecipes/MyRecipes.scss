@@ -1,0 +1,26 @@
+.myRecipes-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.myRecipes {
+  &__middle {
+    width: 80%;
+    padding: 10px;
+  }
+
+  &__title {
+    font-weight: 500;
+    margin-bottom: 0;
+  }
+
+  &__card {
+    width: 30%;
+  }
+
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 1.875rem;
+  width: 100%;
+}

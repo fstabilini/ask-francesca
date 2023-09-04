@@ -1,9 +1,12 @@
 @use "../../styles/_colors.scss" as *;
 
 .filter {
-  background-color: $primary-violet;
+  background-color: $primary-dark-blue;
   width: 100%;
   padding: 1rem;
+  width: 20%;
+  min-width: 15vw;
+  min-height: 90vh;
 
   &__title {
     color: $primary-white;
@@ -16,7 +19,7 @@
   &__subtitle {
     color: $primary-white;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     font-size: 1rem;
   }
 
@@ -36,6 +39,19 @@
     color: $primary-white;
     cursor: pointer;
   }
-}
 
-// cambiar el color de fondo del checkbox que hoy cuando lo clickeas es azul
+  &__radio-button {
+    appearance: none;
+    border: solid $primary-grey;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  &__radio-button:checked {
+    background-color: $primary-white;
+  }
+}
