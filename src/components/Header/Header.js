@@ -65,8 +65,3 @@ const Header = () => {
 };
 
 export default Header;
-
-// hice los links para los iconos, pero falta que anden y faltan los iconos tambien
-// tengo que hacer un readme y the developer installation instructions
-// cambiar la letra y poner una de backup
-// poner un global?

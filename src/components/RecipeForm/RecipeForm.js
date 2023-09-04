@@ -149,7 +149,6 @@ const RecipeForm = ({ setMyRecipes }) => {
         placeholder="Recipe instructions, be as detailed as you want"
       ></textarea>
       <div className="recipe-form__double">
-        {/* dijo juajua que use label asi no se ve asi feo */}
         <div className="recipe-form__half">
           <label className="recipe-form__label">Upload Image</label>
           <input
@@ -162,7 +161,7 @@ const RecipeForm = ({ setMyRecipes }) => {
           />
         </div>
         <div className="recipe-form__half">
-          <label className="recipe-form__label">Upload YouTube video</label>
+          <label className="recipe-form__label">Upload Video</label>
           <input
             type="text"
             name="strYoutube"
@@ -181,5 +180,3 @@ const RecipeForm = ({ setMyRecipes }) => {
 };
 
 export default RecipeForm;
-
-// Ed me recomendó algo para subir videos de youtube que esta en slack

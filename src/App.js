@@ -38,41 +38,45 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/all-recipes"
-            element={
-              <AllRecipes
-                categories={categories}
-                setSelectedCategory={setSelectedCategory}
-                selectedCategory={selectedCategory}
-              />
-            }
-          />
-          <Route
-            path="/new-recipe"
-            element={<NewRecipe setMyRecipes={setMyRecipes} />}
-          />
-          <Route
-            path="/my-recipes"
-            element={<MyRecipes myRecipes={myRecipes} />}
-          />
-          <Route
-            path="/recipe-detail/:id"
-            element={
-              <RecipeDetail setMyRecipes={setMyRecipes} myRecipes={myRecipes} />
-            }
-          />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="App__header">
+          <Header />
+        </div>
+        <div className="App__body">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/all-recipes"
+              element={
+                <AllRecipes
+                  categories={categories}
+                  setSelectedCategory={setSelectedCategory}
+                  selectedCategory={selectedCategory}
+                />
+              }
+            />
+            <Route
+              path="/new-recipe"
+              element={<NewRecipe setMyRecipes={setMyRecipes} />}
+            />
+            <Route
+              path="/my-recipes"
+              element={<MyRecipes myRecipes={myRecipes} />}
+            />
+            <Route
+              path="/recipe-detail/:id"
+              element={
+                <RecipeDetail
+                  setMyRecipes={setMyRecipes}
+                  myRecipes={myRecipes}
+                />
+              }
+            />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );
 }
 
 export default App;
-
-// agregar efectos tipo papel picado y otros que le den movimiento a la pagina
-// cambiar la tipografia y en los 2 textareas tambien

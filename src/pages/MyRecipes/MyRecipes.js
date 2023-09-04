@@ -12,7 +12,7 @@ export default function MyRecipes({ myRecipes }) {
 
         <div className="myRecipes">
           {myRecipes?.map((recipe) => (
-            <div>
+            <div className="myRecipes__card">
               <Card
                 title={recipe.strMeal}
                 image={recipe.strMealThumb}

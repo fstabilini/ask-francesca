@@ -16,7 +16,7 @@ export default function RecipesByCategory({ selectedCategory }) {
   return (
     <div className="cardContainer">
       {recipes?.map((recipe) => (
-        <div key={recipe.idMeal}>
+        <div key={recipe.idMeal} className="cardContainer__card">
           <Card
             title={recipe.strMeal}
             image={recipe.strMealThumb}

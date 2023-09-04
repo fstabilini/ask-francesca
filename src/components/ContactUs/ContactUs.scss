@@ -15,7 +15,7 @@
   &__input-name,
   &__input-email,
   &__textarea-subject {
-    padding: 10px;
+    padding: 0.625rem;
     border: 1px solid $primary-grey;
     border-radius: 4px;
     transition: border 0.3s;
@@ -23,7 +23,6 @@
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
       "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
       "Helvetica Neue", sans-serif;
-    //TODO: pasar a una variable probablemente?
 
     &.contact-us__input-name--active,
     &.contact-us__input-email--active,
@@ -36,7 +35,6 @@
     }
 
     &:focus {
-      // estos dos tienen sentido juntos? porque el primero es para que no tega colorel borde cuando lo clickeo
       outline: none;
       border-color: $primary-blue;
     }
@@ -51,40 +49,3 @@
     }
   }
 }
-
-// que el tamaño del boton sea igual al de crear una nueva receta
-
-// Tablet
-// @media (min-width: 768px) {
-//   .contact-us {
-//     width: 450px;
-
-//     &__form {
-//       gap: 15px;
-//     }
-
-//     input,
-//     textarea,
-//     &__btn {
-//       // Agregamos textarea aquí también
-//       padding: 12px 20px;
-//     }
-//   }
-// }
-
-// Desktop
-// @media (min-width: 1280px) {
-//   .contact-us {
-//     width: 600px;
-
-//     &__form {
-//       gap: 20px;
-//     }
-
-//     input,
-//     textarea,
-//     &__btn {
-//       padding: 14px 25px;
-//     }
-//   }
-// }

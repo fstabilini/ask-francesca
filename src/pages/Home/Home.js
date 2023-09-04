@@ -9,7 +9,7 @@ export default function Home() {
       <div className="home">
         <div className="home__content">
           <div className="home__logo">
-            <img src={colorLogo} alt="logo" width="200px" />
+            <img src={colorLogo} alt="logo" width="150px" />
           </div>
           <h1 className="home__title">Welcome to PlatePal!</h1>
           <p className="home__description">

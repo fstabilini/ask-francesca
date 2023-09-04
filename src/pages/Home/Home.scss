@@ -1,3 +1,5 @@
+@use "../../styles/_colors.scss" as *;
+
 .home {
   display: flex;
 
@@ -13,34 +15,32 @@
   &__content {
     margin: auto;
     width: 80%;
-    padding: 20px;
-    font-family: Arial, sans-serif; // Puedes cambiar la fuente si tienes otra en mente
-    background-color: #ffffff; // Color de fondo del contenido
+    padding: 1.25rem;
+    font-family: Arial, sans-serif;
+    background-color: $primary-white;
   }
 
   &__title {
     text-align: center;
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 20px; // Espaciado debajo del título
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
     font-weight: 500;
   }
 
   &__description,
   &__conclusion {
-    font-size: 1.1rem;
+    font-size: 0.8rem;
     line-height: 1.6;
-    color: #555;
   }
 
   &__list {
-    margin-top: 20px;
-    padding: 0; // Removiendo padding por defecto
-    list-style: none; // Sacando los bullets
-    color: #555;
+    font-size: 0.8rem;
+    margin-top: 1.25rem;
+    padding: 0;
+    list-style: none;
 
     &-item {
-      margin-bottom: 15px;
+      margin-bottom: 0.9375rem;
     }
   }
 }

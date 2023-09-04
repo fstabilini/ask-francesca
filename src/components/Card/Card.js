@@ -21,13 +21,9 @@ export default function Card({ image, title, id }) {
   return (
     <div className="card" onClick={seeDetail}>
       <img src={image} alt={title}></img>
-      <div>
+      <div className="card__title">
         <h2>{truncatedTitle}</h2>
       </div>
     </div>
   );
 }
-
-// la lup la tengo en home y hay que ponerla en la pagina de buscar recetas
-
-// fire base

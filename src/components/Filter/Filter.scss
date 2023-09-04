@@ -16,13 +16,10 @@
     padding-bottom: 0.5rem;
   }
 
-  // me falta agregar la tipografia y la secundaria
-  // deberia tener un global?
-
   &__subtitle {
     color: $primary-white;
     text-align: left;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     font-size: 1rem;
   }
 

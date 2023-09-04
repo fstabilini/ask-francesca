@@ -11,7 +11,7 @@
 }
 
 @mixin column {
-  background-color: $primary-dark-blue; /* Color turquesa para las columnas */
-  width: 100px; /* Puedes ajustar el ancho según lo que necesites */
-  min-height: 100vh; /* Asume que quieres que sea de altura completa */
+  background-color: $primary-dark-blue;
+  width: 100px;
+  min-height: 100vh;
 }

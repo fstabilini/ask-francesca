@@ -30,5 +30,3 @@ const Filter = ({ categories, setSelectedCategory }) => {
 };
 
 export default Filter;
-
-// agregar categorias correctas de comidas
