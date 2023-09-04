@@ -1,0 +1,10 @@
+@use "../../styles/_colors.scss" as *;
+@use "../../styles/_mixins.scss" as *;
+
+.newRecipe-container {
+  display: flex;
+}
+
+.column {
+  @include column;
+}

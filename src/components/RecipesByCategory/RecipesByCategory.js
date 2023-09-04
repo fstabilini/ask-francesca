@@ -16,11 +16,10 @@ export default function RecipesByCategory({ selectedCategory }) {
   return (
     <div className="cardContainer">
       {recipes?.map((recipe) => (
-        <div>
+        <div key={recipe.idMeal}>
           <Card
             title={recipe.strMeal}
             image={recipe.strMealThumb}
-            key={recipe.idMeal}
             id={recipe.idMeal}
           />
         </div>

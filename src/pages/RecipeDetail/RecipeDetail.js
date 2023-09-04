@@ -111,58 +111,64 @@ export default function RecipeDetail({ myRecipes, setMyRecipes }) {
   const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
   return (
-    <div className="detail__title-container">
-      {/* <button className="detail__return-button" onClick={returnBack}>
-        Return to all recipes
-      </button> */}
-      {favorite ? (
-        <button onClick={isFavorite} className="detail__favorite-button">
-          <ion-icon
-            style={{ color: "red", fontSize: "30px" }}
-            name="heart"
-          ></ion-icon>
-        </button>
-      ) : (
-        <button onClick={isFavorite} className="detail__favorite-button">
-          <ion-icon
-            style={{ color: "black", fontSize: "30px" }}
-            name="heart-outline"
-          ></ion-icon>
-        </button>
-      )}
-      <h1 className="detail__title-container__title">{data.strMeal}</h1>
-      <h2 className="detail__title-container__category">{data.strCategory}</h2>
+    <div className="detail__column-wrap">
+      <div className="column"></div>
+      <div className="detail__title-container">
+        <div className="detail__title-wrapper">
+          <h1 className="detail__title-container__title">{data.strMeal}</h1>
+          {favorite ? (
+            <button onClick={isFavorite} className="detail__favorite-button">
+              <ion-icon
+                style={{ color: "red", fontSize: "30px" }}
+                name="heart"
+              ></ion-icon>
+            </button>
+          ) : (
+            <button onClick={isFavorite} className="detail__favorite-button">
+              <ion-icon
+                style={{ color: "black", fontSize: "30px" }}
+                name="heart-outline"
+              ></ion-icon>
+            </button>
+          )}
+        </div>
 
-      <div className="detail__image-ingredients">
-        <img
-          className="detail__image"
-          src={data.strMealThumb}
-          alt={data.strMeal}
-        />
+        <h2 className="detail__title-container__category">
+          {data.strCategory}
+        </h2>
 
-        <ul className="detail__ingredients-list">
-          {ingredientsAndMeasures?.map((item, index) => (
-            <li className="detail__ingredient" key={index}>
-              {item.ingredient} - {item.measure}
-            </li>
-          ))}
-        </ul>
+        <div className="detail__image-ingredients">
+          <img
+            className="detail__image"
+            src={data.strMealThumb}
+            alt={data.strMeal}
+          />
+
+          <ul className="detail__ingredients-list">
+            {ingredientsAndMeasures?.map((item, index) => (
+              <li className="detail__ingredient" key={index}>
+                {item.ingredient} - {item.measure}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <h2 className="detail__sub-title">Instructions</h2>
+        <p className="detail__instructions">{data.strInstructions}</p>
+
+        <h2 className="detail__sub-title">Video</h2>
+        <iframe
+          className="detail__video"
+          width="560"
+          height="315"
+          src={embedUrl}
+          allowFullScreen
+        ></iframe>
+        <button className="detail__return-button" onClick={returnBack}>
+          Return to all recipes
+        </button>
       </div>
-
-      <h2 className="detail__sub-title">Instructions</h2>
-      <p className="detail__instructions">{data.strInstructions}</p>
-
-      <h2 className="detail__sub-title">Video</h2>
-      <iframe
-        className="detail__video"
-        width="560"
-        height="315"
-        src={embedUrl}
-        allowFullScreen
-      ></iframe>
-      <button className="detail__return-button" onClick={returnBack}>
-        Return to all recipes
-      </button>
+      <div className="column"></div>
     </div>
   );
 }
